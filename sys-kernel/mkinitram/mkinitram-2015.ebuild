@@ -4,12 +4,8 @@
 
 EAPI=5
 
-inherit git-2
-
 DESCRIPTION="initram generation util"
 HOMEPAGE="http://fifo.sh"
-
-EGIT_REPO_URI="https://github.com/esno/mkinitram.git"
 
 LICENSE="MIT"
 SLOT="0"
@@ -24,15 +20,17 @@ RDEPEND="
   sys-fs/lvm2
   "
 
+S=${WORKDIR}
+
 src_install() {
   dodir /etc
   dodir /usr/share/mkinitram
 
   insinto /etc
-  doins ${S}/src/initram.cfg
+  doins ${FILESDIR}/initram.cfg
 
   insinto /usr/share/mkinitram
-  doins ${S}/src/init.sh
+  doins ${FILESDIR}/init.sh
 
-  dosbin ${S}/mkinitram.sh
+  dosbin ${FILESDIR}/mkinitram.sh
 }
