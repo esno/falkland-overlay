@@ -1,0 +1,4 @@
+INPUT_DEVICES="libinput evdev joystick synaptics"
+VIDEO_CARDS="amdgpu fbdev radeonsi"
+
+USE="vulkan xft"
